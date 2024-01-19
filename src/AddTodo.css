@@ -1,0 +1,21 @@
+.option--todo {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.option--todo input {
+    width: 40em;
+    padding: 8px;
+    margin-right: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+.option--todo button {
+    padding: 8px;
+    border: none;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+  }
