@@ -25,11 +25,10 @@ const TodoList = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todos.list);
   const searchTerm = useSelector((state) => state.todos.searchTerm);
-
   const filteredTodos = todos.filter((todo) =>
     todo.text.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
+    // localStorage.setItem("data", JSON.stringify(todos));
   return (
     <div className="todo--list">
       <input

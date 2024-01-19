@@ -47,18 +47,25 @@ const todoSlice = createSlice({
   },
   reducers: {
     addTodo: (state, action) => {
-      return {...state, list: [...state.list, { id: Date.now(), text: action.payload, completed: false }]};
-      // state.list.push({ id: Date.now(), text: action.payload, completed: false });
+      
+      const temp = {...state, list: [...state.list, { id: Date.now(), text: action.payload, completed: false }]};
+
+
+      localStorage.setItem("data", JSON.stringify(temp));
+
+      
+      return temp;
     },
     setSearchTerm: (state, action) => {
       return {...state, searchTerm: action.payload};
-      // state.searchTerm = action.payload;
     },
     addMultiTodo: (state, action) => {
-      return {
+      const temp = {
         ...state, 
-        list: [...state.list, ...action.payload.todo]
+        list: [...state.list, ...action.payload.list]
       };
+      localStorage.setItem("data", JSON.stringify(temp));
+      return temp;
     },
   },
 });
